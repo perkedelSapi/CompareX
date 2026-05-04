@@ -174,4 +174,4 @@ app/src/main/java/com/al/comparex/
 
 ## Tampilan UI apk
 
-![UI](Gambar/CompareX.png)
+![UI](gambar/CompareX.png)
