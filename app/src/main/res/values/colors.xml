@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand palette -->
+    <color name="primary">#0D1117</color>
+    <color name="primary_dark">#010409</color>
+    <color name="primary_variant">#161B22</color>
+    <color name="accent">#58A6FF</color>
+    <color name="accent_dark">#1F6FEB</color>
+    <color name="surface">#21262D</color>
+    <color name="surface_variant">#30363D</color>
+    <color name="on_surface">#C9D1D9</color>
+    <color name="on_surface_secondary">#8B949E</color>
+    <color name="divider">#21262D</color>
+
+    <!-- Status colors -->
+    <color name="status_powerful">#3FB950</color>
+    <color name="status_enough">#58A6FF</color>
+    <color name="status_weak">#D29922</color>
+    <color name="status_below">#F85149</color>
+
+    <!-- Metacritic badge -->
+    <color name="metacritic_green">#66CC33</color>
+    <color name="metacritic_yellow">#FFCC33</color>
+    <color name="metacritic_red">#FF0000</color>
+
+    <!-- Card states -->
+    <color name="card_normal">#161B22</color>
+    <color name="card_selected">#1F3A5F</color>
+
+    <!-- Compare table -->
+    <color name="table_header">#0D1117</color>
+    <color name="table_row_odd">#161B22</color>
+    <color name="table_row_even">#1C2128</color>
+    <color name="table_section_header">#1F3A5F</color>
+
+    <!-- White / Black -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_primary">#E6EDF3</color>
+    <color name="text_secondary">#8B949E</color>
+</resources>

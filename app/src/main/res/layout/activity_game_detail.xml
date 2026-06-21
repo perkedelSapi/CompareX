@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_variant"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/text_primary"
+        app:titleTextColor="@color/text_primary"/>
+
+    <!-- Skeleton loading state -->
+    <include
+        android:id="@+id/layout_skeleton"
+        layout="@layout/layout_detail_skeleton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <!-- Error state -->
+    <LinearLayout
+        android:id="@+id/layout_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@android:drawable/ic_dialog_alert"
+            android:tint="@color/status_below"/>
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_error_generic"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retry"
+            style="@style/Widget.CompareX.Button.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_retry"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <!-- Main scrollable content -->
+    <ScrollView
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero image -->
+            <ImageView
+                android:id="@+id/img_game"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Game Cover"/>
+
+            <!-- Padding wrapper -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Game name -->
+                <TextView
+                    android:id="@+id/tv_game_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Game Name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <!-- Rating row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5 / 5.0  ★"
+                        android:textColor="@color/accent"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_metacritic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_metacritic_badge"
+                        android:layout_marginStart="12dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <!-- Info card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/surface_variant"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                            android:id="@+id/row_release"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <!-- reuse pattern inline for all info rows -->
+                        <!-- Release Date -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="6dp">
+                            <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="@string/label_release_date" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tv_release_date" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="—" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                        <!-- Developer -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="6dp">
+                            <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="Developer" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tv_developer" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="—" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                        <!-- Publisher -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="6dp">
+                            <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="Publisher" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tv_publisher" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="—" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                        <!-- Genre -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="6dp">
+                            <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="Genre" android:textColor="@color/text_secondary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tv_genre" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="—" android:textColor="@color/text_primary" android:textSize="13sp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- AI Analysis Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="16dp"
+                    app:strokeColor="@color/accent_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Header -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_ai_advisor"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_ai_subtitle"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="2dp"/>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/progress_ai"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:indeterminateTint="@color/accent"
+                                android:layout_marginEnd="8dp"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <!-- Spek user ringkasan -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:cardBackgroundColor="@color/primary_variant"
+                            app:cardCornerRadius="8dp">
+                            <TextView
+                                android:id="@+id/tv_user_spek_summary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_your_spec"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp"
+                                android:padding="10dp"
+                                android:fontFamily="monospace"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Tombol analisis -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_ai_analysis"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="@string/btn_ai_analysis"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="12dp"
+                            app:backgroundTint="@color/accent_dark"
+                            app:cornerRadius="10dp"/>
+
+                        <!-- Hasil analisis -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_ai_result"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="@color/primary"
+                            app:cardCornerRadius="10dp"
+                            app:strokeColor="@color/accent_dark"
+                            app:strokeWidth="1dp"
+                            android:visibility="gone">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <!-- Accent divider top -->
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@drawable/divider_accent"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="14dp">
+
+                                    <!-- Header row -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="center_vertical"
+                                        android:layout_marginBottom="10dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/label_ai_result_header"
+                                            android:textColor="@color/accent"
+                                            android:textSize="11sp"
+                                            android:textAllCaps="true"
+                                            android:letterSpacing="0.1"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:layout_marginStart="6dp"/>
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/tv_anchor_badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=""
+                                        android:textSize="10sp"
+                                        android:paddingHorizontal="8dp"
+                                        android:paddingVertical="4dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:visibility="gone"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_ai_result"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text=""
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="13sp"
+                                        android:lineSpacingMultiplier="1.65"
+                                        android:letterSpacing="0.01"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Description -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_description"
+                    android:textColor="@color/accent"
+                    android:textSize="11sp"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.1"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:lineSpacingMultiplier="1.5"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Requirements loading indicator -->
+                <LinearLayout
+                    android:id="@+id/layout_req_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:visibility="visible">
+
+                    <ProgressBar
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:indeterminateTint="@color/accent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/msg_req_loading"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Requirements unavailable -->
+                <TextView
+                    android:id="@+id/tv_req_unavailable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_req_unavailable"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:visibility="gone"/>
+
+                <!-- Requirements content -->
+                <LinearLayout
+                    android:id="@+id/layout_req_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- MINIMUM -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_min_req"
+                        android:textColor="@color/accent"
+                        android:textSize="11sp"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginTop="20dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="10dp"
+                        app:strokeColor="@color/surface_variant"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="OS" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_os" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Processor" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_processor" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Memory" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_memory" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Graphics" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_graphics" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="DirectX" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_directx" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Storage" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_min_storage" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- RECOMMENDED -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_rec_req"
+                        android:textColor="@color/accent"
+                        android:textSize="11sp"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginTop="20dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="10dp"
+                        app:strokeColor="@color/surface_variant"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="OS" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_os" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Processor" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_processor" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Memory" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_memory" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Graphics" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_graphics" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="DirectX" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_directx" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+                            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingVertical="5dp">
+                                <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Storage" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+                                <TextView android:id="@+id/tv_rec_storage" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="N/A" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout><!-- end layout_req_content -->
+
+            </LinearLayout><!-- end padding wrapper -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

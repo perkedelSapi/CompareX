@@ -1,0 +1,66 @@
+<resources>
+    <!--
+        PENTING: Harus pakai NoActionBar agar Toolbar manual bisa diset via
+        setSupportActionBar(). DarkActionBar menyebabkan crash
+        "This Activity already has an action bar".
+    -->
+    <style name="Theme.CompareX" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/primary</item>
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="materialButtonStyle">@style/Widget.CompareX.Button</item>
+    </style>
+
+    <!-- Splash — juga NoActionBar -->
+    <style name="Theme.CompareX.Splash" parent="Theme.CompareX">
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
+
+    <!-- Toolbar widget style -->
+    <style name="Widget.CompareX.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/primary_variant</item>
+        <item name="titleTextColor">@color/text_primary</item>
+    </style>
+
+    <!-- Primary button -->
+    <style name="Widget.CompareX.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/accent_dark</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <!-- Outlined button -->
+    <style name="Widget.CompareX.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/accent</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <!-- TextAppearance base (harus ada agar child style tidak error AAPT) -->
+    <style name="TextAppearance.CompareX" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Section header -->
+    <style name="TextAppearance.CompareX.SectionHeader" parent="TextAppearance.CompareX">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.CompareX.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/surface_variant</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+</resources>

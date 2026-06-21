@@ -1,0 +1,10 @@
+sdk.dir=/path/to/your/Android/Sdk
+
+# Salin file ini menjadi "local.properties" lalu isi key kamu sendiri.
+# local.properties TIDAK akan ter-push ke GitHub (lihat .gitignore).
+
+# Dapatkan API key gratis di: https://rawg.io/apidocs
+RAWG_API_KEY=isi_rawg_key_disini
+
+# Dapatkan API key di: https://platform.deepseek.com/api_keys
+AI_API_KEY=isi_deepseek_key_disini

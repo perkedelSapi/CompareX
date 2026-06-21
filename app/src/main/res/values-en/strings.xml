@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CompareX</string>
+    <string name="app_tagline">Game Requirements Comparator</string>
+
+    <!-- Spek Input -->
+    <string name="title_spek_input">Device Specifications</string>
+    <string name="hint_cpu">Search CPU…</string>
+    <string name="hint_gpu">Search GPU…</string>
+    <string name="hint_ram">Example: 16</string>
+    <string name="label_cpu">CPU / PROCESSOR</string>
+    <string name="label_gpu">GPU / GRAPHICS CARD</string>
+    <string name="label_gpu_sub">Desktop · Laptop (Mobile) · Integrated (iGPU)</string>
+    <string name="label_vram">VRAM GPU</string>
+    <string name="label_vram_note">0 = iGPU</string>
+    <string name="label_ram">RAM</string>
+    <string name="btn_save_spek">Save &amp; Start</string>
+    <string name="spek_header_title">PC / Laptop Specifications</string>
+    <string name="spek_header_desc">Fill in your specs so AI can accurately analyze game compatibility.</string>
+
+    <!-- Main -->
+    <string name="hint_search">Search game… (min. 2 characters)</string>
+    <string name="btn_compare">Compare</string>
+    <string name="msg_no_results">No results found for this search.</string>
+    <string name="msg_no_results_sub">Try different keywords or check spelling</string>
+    <string name="btn_retry">Try Again</string>
+    <string name="action_edit_spek">Edit Specifications</string>
+    <string name="action_toggle_lang">Bahasa Indonesia</string>
+    <string name="label_recently_checked">Recently Checked</string>
+    <string name="label_popular_games">Popular Games</string>
+    <string name="btn_clear">Clear</string>
+    <string name="label_selected_games">0/2 games selected</string>
+    <string name="label_select">Select</string>
+    <string name="msg_error_generic">An error occurred</string>
+    <string name="msg_onboarding">Fill in your PC specs to check game compatibility!</string>
+    <string name="btn_fill_now">Fill Now</string>
+    <string name="msg_loading_splash">Loading game data…</string>
+
+    <!-- Detail -->
+    <string name="label_release_date">Release Date</string>
+    <string name="label_developer">Developer</string>
+    <string name="label_publisher">Publisher</string>
+    <string name="label_genre">Genre</string>
+    <string name="label_metacritic">Metacritic</string>
+    <string name="label_rating">Rating</string>
+    <string name="label_description">DESCRIPTION</string>
+    <string name="label_min_req">MINIMUM REQUIREMENTS</string>
+    <string name="label_rec_req">RECOMMENDED REQUIREMENTS</string>
+    <string name="label_os">OS</string>
+    <string name="label_processor">Processor</string>
+    <string name="label_memory">Memory</string>
+    <string name="label_graphics">Graphics</string>
+    <string name="label_directx">DirectX</string>
+    <string name="label_storage">Storage</string>
+    <string name="label_ai_advisor">AI Game Advisor</string>
+    <string name="label_ai_subtitle">Performance analysis + FPS estimate</string>
+    <string name="label_ai_compare_subtitle">Auto analysis: which game is more worth it?</string>
+    <string name="label_ai_result_header">AI ANALYSIS RESULT</string>
+    <string name="label_your_spec">Spec not loaded</string>
+    <string name="btn_ai_analysis">AI Analysis</string>
+    <string name="msg_req_loading">Loading system requirements…</string>
+    <string name="msg_req_unavailable">System requirements not available for this game.</string>
+
+    <!-- Compare -->
+    <string name="label_game_info_section">GAME INFO</string>
+    <string name="label_col_spec">Specification</string>
+    <string name="label_release_short">Release</string>
+    <string name="powered_by">Powered by RAWG &amp; DeepSeek AI</string>
+    <string name="app_version">v1.0</string>
+    <string name="msg_analyzing">Analyzing…</string>
+    <string name="msg_no_description">No description available.</string>
+    <string name="msg_max_selection">Maximum 2 games selected</string>
+    <string name="msg_selection_cleared">Selection cleared</string>
+    <string name="msg_delete_history_title">Remove from history?</string>
+    <string name="msg_delete_all_history_title">Clear all history?</string>
+    <string name="msg_delete_all_history_body">All checked game history will be removed.</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_delete_all">Delete All</string>
+    <string name="error_pick_cpu">Select CPU</string>
+    <string name="error_pick_gpu">Select GPU</string>
+    <string name="msg_error_unknown">An unknown error occurred</string>
+
+    <!-- Toast & Toolbar titles -->
+    <string name="msg_spek_saved">Specifications saved!</string>
+    <string name="title_compare">Comparison</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Detail requirements error messages -->
+    <string name="msg_req_not_available_yet">System requirements for this game are not yet available.</string>
+    <string name="msg_ai_response_empty">AI response is empty.</string>
+    <string name="msg_detail_load_failed">Failed to load game detail (code: %1$d)</string>
+    <string name="msg_req_load_failed">Game detail failed to load</string>
+    <string name="msg_connection_failed">Connection failed: %1$s</string>
+    <string name="msg_connection_failed_simple">Connection failed</string>
+    <string name="msg_req_not_available">Requirements not available</string>
+    <string name="msg_data_not_ready">Game data hasn\'t finished loading. Wait a moment and try again.</string>
+    <string name="msg_invalid_api_key">Invalid DeepSeek API Key.\nCheck AI_API_KEY in ApiClient.java</string>
+    <string name="msg_deepseek_failed">DeepSeek API failed (code: %1$d)</string>
+    <string name="msg_server_overload">DeepSeek server overload (%1$d retries failed). Try again later.</string>
+    <string name="msg_quota_exceeded">DeepSeek quota exceeded (%1$d retries). Try again later.</string>
+    <string name="msg_retry_countdown">%1$s, retry #%2$d/%3$d in %4$ds…</string>
+    <string name="label_server_overload">Server overload</string>
+    <string name="label_quota_full">Quota temporarily full</string>
+    <string name="msg_connection_retry">Connection issue, retrying…</string>
+    <string name="msg_deepseek_error">DeepSeek error: %1$s</string>
+
+    <!-- Spek input no specific reason -->
+    <string name="hint_search_dropdown">Search…</string>
+
+    <!-- Onboarding language picker -->
+    <string name="title_choose_language">Choose Language</string>
+    <string name="desc_choose_language">Choose the language you want to use in this app</string>
+    <string name="lang_indonesian">Bahasa Indonesia</string>
+    <string name="lang_english">English</string>
+    <string name="btn_continue">Continue</string>
+    <string name="msg_steam_not_found">Game not found on Steam</string>
+    <string name="msg_steam_search_failed">Steam Store search failed</string>
+    <string name="msg_steam_req_unavailable">Requirements not available on Steam</string>
+    <string name="msg_steam_api_failed">Steam API failed</string>
+    <string name="msg_compare_data_not_ready">Game data hasn\'t finished loading.\nWait a moment and try again.</string>
+    <string name="msg_invalid_api_key_with_link">Invalid DeepSeek API Key.\nCheck AI_API_KEY in ApiClient.java\n→ https://platform.deepseek.com/api_keys</string>
+    <string name="msg_server_overload_minutes">DeepSeek server is overloaded (%1$d retries failed).\nTry again in a few minutes.</string>
+    <string name="msg_quota_exceeded_minutes">DeepSeek quota exceeded (%1$d retries attempted).\nTry again in a few minutes.</string>
+    <string name="error_enter_ram">Enter RAM</string>
+    <string name="error_invalid_ram">Invalid RAM</string>
+    <string name="badge_anchor_data">Based on community benchmark data</string>
+    <string name="badge_estimated_data">AI estimate — benchmark data unavailable</string>
+</resources>

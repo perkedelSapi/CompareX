@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CompareX</string>
+    <string name="app_tagline">Game Requirements Comparator</string>
+
+    <!-- Spek Input -->
+    <string name="title_spek_input">Spesifikasi Perangkat</string>
+    <string name="hint_cpu">Cari CPU…</string>
+    <string name="hint_gpu">Cari GPU…</string>
+    <string name="hint_ram">Contoh: 16</string>
+    <string name="label_cpu">CPU / PROCESSOR</string>
+    <string name="label_gpu">GPU / GRAPHICS CARD</string>
+    <string name="label_gpu_sub">Desktop · Laptop (Mobile) · Integrated (iGPU)</string>
+    <string name="label_vram">VRAM GPU</string>
+    <string name="label_vram_note">0 = iGPU</string>
+    <string name="label_ram">RAM</string>
+    <string name="btn_save_spek">Simpan &amp; Mulai</string>
+    <string name="spek_header_title">Spesifikasi PC / Laptop</string>
+    <string name="spek_header_desc">Isi spek kamu agar AI bisa menganalisis game dengan akurat.</string>
+
+    <!-- Main -->
+    <string name="hint_search">Cari game… (min. 2 karakter)</string>
+    <string name="btn_compare">Bandingkan</string>
+    <string name="msg_no_results">Tidak ada hasil untuk pencarian ini.</string>
+    <string name="msg_no_results_sub">Coba kata kunci lain atau periksa ejaan</string>
+    <string name="btn_retry">Coba Lagi</string>
+    <string name="action_edit_spek">Edit Spesifikasi</string>
+    <string name="action_toggle_lang">English</string>
+    <string name="label_recently_checked">Terakhir Dicek</string>
+    <string name="label_popular_games">Game Populer</string>
+    <string name="btn_clear">Hapus</string>
+    <string name="label_selected_games">0/2 game dipilih</string>
+    <string name="label_select">Pilih</string>
+    <string name="msg_error_generic">Terjadi kesalahan</string>
+    <string name="msg_onboarding">Isi spesifikasi PC kamu agar bisa cek kompatibilitas game!</string>
+    <string name="btn_fill_now">Isi Sekarang</string>
+    <string name="msg_loading_splash">Memuat data game…</string>
+
+    <!-- Detail -->
+    <string name="label_release_date">Tanggal Rilis</string>
+    <string name="label_developer">Developer</string>
+    <string name="label_publisher">Publisher</string>
+    <string name="label_genre">Genre</string>
+    <string name="label_metacritic">Metacritic</string>
+    <string name="label_rating">Rating</string>
+    <string name="label_description">DESKRIPSI</string>
+    <string name="label_min_req">MINIMUM REQUIREMENTS</string>
+    <string name="label_rec_req">RECOMMENDED REQUIREMENTS</string>
+    <string name="label_os">OS</string>
+    <string name="label_processor">Processor</string>
+    <string name="label_memory">Memory</string>
+    <string name="label_graphics">Graphics</string>
+    <string name="label_directx">DirectX</string>
+    <string name="label_storage">Storage</string>
+    <string name="label_ai_advisor">AI Game Advisor</string>
+    <string name="label_ai_subtitle">Analisis performa + estimasi FPS</string>
+    <string name="label_ai_compare_subtitle">Analisis otomatis: game mana lebih worth it?</string>
+    <string name="label_ai_result_header">HASIL ANALISIS AI</string>
+    <string name="label_your_spec">Spek belum dimuat</string>
+    <string name="btn_ai_analysis">Analisis AI</string>
+    <string name="msg_req_loading">Memuat system requirements…</string>
+    <string name="msg_req_unavailable">System requirements tidak tersedia untuk game ini.</string>
+
+    <!-- Compare -->
+    <string name="label_game_info_section">INFORMASI GAME</string>
+    <string name="label_col_spec">Spesifikasi</string>
+    <string name="label_release_short">Rilis</string>
+    <string name="powered_by">Powered by RAWG &amp; DeepSeek AI</string>
+    <string name="app_version">v1.0</string>
+    <string name="msg_analyzing">Menganalisis…</string>
+    <string name="msg_no_description">Tidak ada deskripsi.</string>
+    <string name="msg_max_selection">Maksimal 2 game dipilih</string>
+    <string name="msg_selection_cleared">Pilihan dihapus</string>
+    <string name="msg_delete_history_title">Hapus dari riwayat?</string>
+    <string name="msg_delete_all_history_title">Hapus semua riwayat?</string>
+    <string name="msg_delete_all_history_body">Semua riwayat game yang dicek akan dihapus.</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="btn_delete_all">Hapus Semua</string>
+    <string name="error_pick_cpu">Pilih CPU</string>
+    <string name="error_pick_gpu">Pilih GPU</string>
+    <string name="msg_error_unknown">Terjadi kesalahan tidak diketahui</string>
+
+    <!-- Toast & Toolbar titles -->
+    <string name="msg_spek_saved">Spesifikasi tersimpan!</string>
+    <string name="title_compare">Perbandingan</string>
+    <string name="btn_cancel">Batal</string>
+
+    <!-- Detail requirements error messages -->
+    <string name="msg_req_not_available_yet">System requirements untuk game ini belum tersedia.</string>
+    <string name="msg_ai_response_empty">Respons AI kosong.</string>
+    <string name="msg_detail_load_failed">Gagal memuat detail game (kode: %1$d)</string>
+    <string name="msg_req_load_failed">Detail game gagal dimuat</string>
+    <string name="msg_connection_failed">Koneksi gagal: %1$s</string>
+    <string name="msg_connection_failed_simple">Koneksi gagal</string>
+    <string name="msg_req_not_available">Requirements tidak tersedia</string>
+    <string name="msg_data_not_ready">Data game belum selesai dimuat. Tunggu sebentar lalu coba lagi.</string>
+    <string name="msg_invalid_api_key">API Key DeepSeek tidak valid.\nPeriksa AI_API_KEY di ApiClient.java</string>
+    <string name="msg_deepseek_failed">DeepSeek API gagal (kode: %1$d)</string>
+    <string name="msg_server_overload">Server DeepSeek overload (%1$d kali retry gagal). Coba lagi nanti.</string>
+    <string name="msg_quota_exceeded">Quota DeepSeek habis (%1$d kali retry). Coba lagi nanti.</string>
+    <string name="msg_retry_countdown">%1$s, percobaan ke-%2$d/%3$d dalam %4$ds…</string>
+    <string name="label_server_overload">Server overload</string>
+    <string name="label_quota_full">Quota sementara penuh</string>
+    <string name="msg_connection_retry">Koneksi bermasalah, mencoba ulang…</string>
+    <string name="msg_deepseek_error">DeepSeek error: %1$s</string>
+
+    <!-- Spek input no specific reason -->
+    <string name="hint_search_dropdown">Cari…</string>
+
+    <!-- Onboarding language picker -->
+    <string name="title_choose_language">Pilih Bahasa</string>
+    <string name="desc_choose_language">Pilih bahasa yang ingin kamu gunakan di aplikasi ini</string>
+    <string name="lang_indonesian">Bahasa Indonesia</string>
+    <string name="lang_english">English</string>
+    <string name="btn_continue">Lanjutkan</string>
+    <string name="msg_steam_not_found">Game tidak ditemukan di Steam</string>
+    <string name="msg_steam_search_failed">Steam Store search gagal</string>
+    <string name="msg_steam_req_unavailable">Requirements tidak tersedia di Steam</string>
+    <string name="msg_steam_api_failed">Steam API gagal</string>
+    <string name="msg_compare_data_not_ready">Data game belum selesai dimuat.\nTunggu sebentar lalu coba lagi.</string>
+    <string name="msg_invalid_api_key_with_link">API Key DeepSeek tidak valid.\nPeriksa AI_API_KEY di ApiClient.java\n→ https://platform.deepseek.com/api_keys</string>
+    <string name="msg_server_overload_minutes">Server DeepSeek sedang overload (%1$d kali retry gagal).\nCoba lagi dalam beberapa menit.</string>
+    <string name="msg_quota_exceeded_minutes">Quota DeepSeek habis (%1$d kali retry sudah dicoba).\nCoba lagi dalam beberapa menit.</string>
+    <string name="error_enter_ram">Masukkan RAM</string>
+    <string name="error_invalid_ram">RAM tidak valid</string>
+    <string name="badge_anchor_data">Berdasarkan data benchmark komunitas</string>
+    <string name="badge_estimated_data">Estimasi AI — data benchmark tidak tersedia</string>
+</resources>

@@ -1,0 +1,36 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/AndroidProjectSystem.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/misc.xml
+/.idea/gradle.xml
+/.idea/vcs.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Per-module build folder
+*/build/
+
+# APK / build output
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Log files
+*.log
+
+# Keystore (jangan pernah commit signing key!)
+*.jks
+*.keystore

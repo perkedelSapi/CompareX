@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="5dp"
+    app:cardBackgroundColor="#161B22"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#30363D"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:id="@+id/skeleton_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Cover placeholder -->
+        <View
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:tag="skeleton"
+            android:background="@drawable/skeleton_block"/>
+
+        <!-- Info section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Title line 1 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginBottom="6dp"
+                android:tag="skeleton"
+                android:background="@drawable/skeleton_block"/>
+
+            <!-- Title line 2 (shorter) -->
+            <View
+                android:layout_width="160dp"
+                android:layout_height="16dp"
+                android:tag="skeleton"
+                android:background="@drawable/skeleton_block"/>
+
+            <!-- Year line -->
+            <View
+                android:layout_width="70dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="10dp"
+                android:tag="skeleton"
+                android:background="@drawable/skeleton_block"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- Bottom row: metacritic badge + checkbox placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <View
+                    android:layout_width="32dp"
+                    android:layout_height="22dp"
+                    android:tag="skeleton"
+                    android:background="@drawable/skeleton_block_round"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:tag="skeleton"
+                    android:background="@drawable/skeleton_block_round"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
