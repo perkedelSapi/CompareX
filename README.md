@@ -177,4 +177,5 @@ app/src/main/java/com/al/comparex/
 ![UI](gambar/CompareX.png)
 
 Figma: https://www.figma.com/design/21gM673Y5HheM7mnMdJbrT/CompareX?node-id=189-25&t=lQoI2PJLLABON9jT-1
+
 Clickup: https://sharing.clickup.com/90181768473/l/h/4-901810084256-1/a360d98cfcc51c8
